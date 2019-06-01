@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestApi", "RestApi\RestApi.csproj", "{A1C77EB3-7FBE-4008-BC12-EA9DBE6118AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestApiUnitTest", "UnitTestProject1\RestApiUnitTest.csproj", "{A131AA23-E9E4-4132-9ECF-FB5C57B10B83}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A1C77EB3-7FBE-4008-BC12-EA9DBE6118AA} = {A1C77EB3-7FBE-4008-BC12-EA9DBE6118AA}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1C77EB3-7FBE-4008-BC12-EA9DBE6118AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1C77EB3-7FBE-4008-BC12-EA9DBE6118AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1C77EB3-7FBE-4008-BC12-EA9DBE6118AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1C77EB3-7FBE-4008-BC12-EA9DBE6118AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A131AA23-E9E4-4132-9ECF-FB5C57B10B83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A131AA23-E9E4-4132-9ECF-FB5C57B10B83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A131AA23-E9E4-4132-9ECF-FB5C57B10B83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A131AA23-E9E4-4132-9ECF-FB5C57B10B83}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
