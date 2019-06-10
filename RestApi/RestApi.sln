@@ -10,6 +10,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestApiUnitTest", "UnitTest
 		{A1C77EB3-7FBE-4008-BC12-EA9DBE6118AA} = {A1C77EB3-7FBE-4008-BC12-EA9DBE6118AA}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UiApp", "UiApp\UiApp.csproj", "{76A73857-2E7B-4D2F-9337-7BB66E18BB33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UiUnitTest", "UiUnitTest\UiUnitTest.csproj", "{9BBD4C8D-36AD-4659-AC19-C8DBA26FDD8B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{76A73857-2E7B-4D2F-9337-7BB66E18BB33} = {76A73857-2E7B-4D2F-9337-7BB66E18BB33}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +31,14 @@ Global
 		{A131AA23-E9E4-4132-9ECF-FB5C57B10B83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A131AA23-E9E4-4132-9ECF-FB5C57B10B83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A131AA23-E9E4-4132-9ECF-FB5C57B10B83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76A73857-2E7B-4D2F-9337-7BB66E18BB33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76A73857-2E7B-4D2F-9337-7BB66E18BB33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76A73857-2E7B-4D2F-9337-7BB66E18BB33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76A73857-2E7B-4D2F-9337-7BB66E18BB33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BBD4C8D-36AD-4659-AC19-C8DBA26FDD8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BBD4C8D-36AD-4659-AC19-C8DBA26FDD8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BBD4C8D-36AD-4659-AC19-C8DBA26FDD8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BBD4C8D-36AD-4659-AC19-C8DBA26FDD8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
