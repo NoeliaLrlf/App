@@ -6,6 +6,7 @@ using UiApp.ComponentHelper;
 using UiApp.PageObject;
 using OpenQA.Selenium;
 using System.Threading;
+using OpenQA.Selenium.Support.UI;
 
 namespace UiUnitTest
 {
@@ -82,6 +83,7 @@ namespace UiUnitTest
             settings.ClickSettings();
             settings.EnterOldPassword();
             settings.ClickOkButton();
+            settings.Alert();
             IAlert alert = DriverPage.Instance._driver.SwitchTo().Alert();
             var text = alert.Text;
             alert.Accept();
