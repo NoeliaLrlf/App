@@ -8,6 +8,7 @@ using RestApi.Requests.Projects;
 using RestApi.Entity.ProjectEntity;
 using Newtonsoft.Json;
 using System.Web.Script.Serialization;
+using RestApi.Database;
 
 namespace UnitTestProject1
 {
@@ -47,7 +48,7 @@ namespace UnitTestProject1
             ProjectEntity projectEntityExpected = new ProjectEntity();
             projectEntityExpected.Id = 0;
             projectEntityExpected.Content = "Inbox";
-            projectEntityExpected.ItemsCount = 23;
+            projectEntityExpected.ItemsCount = 22;
             projectEntityExpected.Icon = 15;
             projectEntityExpected.ItemType = 4;
             projectEntityExpected.Children = new Object[0];
@@ -55,6 +56,13 @@ namespace UnitTestProject1
             string expected = projectEntityExpected.GetObjectAsJson();
             Assert.AreEqual(actual, expected);
          
+        }
+
+        [TestMethod]
+        public void Project()
+        {
+            InsertData.Insert();
+
         }
     }
 }
