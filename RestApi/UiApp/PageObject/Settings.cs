@@ -23,10 +23,7 @@ namespace UiApp.PageObject
         }
         public void EnterOldPassword()
         {
-           
-            wait.Until(ExpectedConditions.ElementIsVisible(By.Id("TextPwOld")));
-            //var drivers = DriverPage.Instance._driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            // drivers.Until(ExpectedCondition.ElementIsVisible(By.Id("TextPwOld")));
+            GenericHelper.WaitForElement(By.Id("TextPwOld"));
             TextBoxHelper.TypeInTextBox(By.Id("TextPwOld"), "Pass");
         }
         public void EnterTimeZone()
@@ -50,13 +47,13 @@ namespace UiApp.PageObject
 
         public void ClickOkButton()
         {
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//span[text()='Ok']")));
-            ButtonHelper.ClickButton(By.XPath("//span[text()='Ok']"));
+           GenericHelper.WaitForElement(By.XPath("//span[text()='Ok']"));
+           ButtonHelper.ClickButton(By.XPath("//span[text()='Ok']"));
         }
 
         public void Alert()
         {
-            wait.Until(ExpectedConditions.AlertIsPresent());
+            GenericHelper.WaitForElementAlert();
                
         }
 
