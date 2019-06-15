@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace UiApp.ComponentHelper
     {
 
         public DriverPage DriverPage;
+        public static WebDriverWait wait = new WebDriverWait(DriverPage.Instance._driver, TimeSpan.FromSeconds(10));
         public GenericHelper() 
         {
         
@@ -43,6 +45,26 @@ namespace UiApp.ComponentHelper
             {
                 throw new NoSuchElementException("Element Not Found: " + Locator.ToString());
             }
+        }
+
+        public static void WaitForElement(By locator, string value = "visible")
+        {
+           
+            switch (value)
+            {
+                case "visible":
+                    wait.Until(ExpectedConditions.ElementIsVisible(locator));
+                    break;
+                default: throw new ArgumentNullException();
+            
+                    
+            }
+        }
+
+        public static void WaitForElementAlert()
+        {
+            wait.Until(ExpectedConditions.AlertIsPresent());
+               
         }
     }
 }
