@@ -8,7 +8,6 @@ using RestApi.Requests.Projects;
 using RestApi.Entity.ProjectEntity;
 using Newtonsoft.Json;
 using System.Web.Script.Serialization;
-using RestApi.Database;
 
 namespace UnitTestProject1
 {
@@ -57,12 +56,7 @@ namespace UnitTestProject1
             Assert.AreEqual(actual, expected);
          
         }
-
-        [TestMethod]
-        public void Project()
-        {
-            InsertData.Insert();
-
-        }
+        
+        
     }
 }
