@@ -1,0 +1,15 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/RestApi/.localhistory/D/TestFramework/App/RestApi
+/RestApi/packages
+/RestApi/RestApi/bin/Debug
+/RestApi/RestApi/obj/Debug
+/RestApi/UiApp/obj/Debug
+/RestApi/UiApp/bin/Debug
+/RestApi/UiUnitTest/bin/Debug
+/RestApi/UiUnitTest/obj/Debug
+/RestApi/UnitTestProject1/bin/Debug
+/RestApi/UnitTestProject1/obj/Debug
+/RestApi/.vs/RestApi/v15

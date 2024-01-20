@@ -7,6 +7,7 @@ using RestSharp;
 using RestApi.Requests.Projects;
 using RestApi.Entity.ProjectEntity;
 using Newtonsoft.Json;
+using System.Web.Script.Serialization;
 
 namespace UnitTestProject1
 {
@@ -36,24 +37,26 @@ namespace UnitTestProject1
         [TestMethod]
         public void Project_Get_ValidJson_200IsReturned()
         {
-            string password = ConfigurationManager.AppSettings["user"] + ":" + ConfigurationManager.AppSettings["user"];
-            string uri = "projects/3785177.json";
+            string uri = "/filters.json";
             IRestResponse response = RestApiClient.Instance.get(uri);
-  
+      
             dynamic returnResponseRun = JsonConvert.DeserializeObject(response.Content);
-            var actualJson = returnResponseRun;
-           
+            string  LastSunc = returnResponseRun[0].ToString();
+            var actual = LastSunc.Replace("\r\n  ", "").Replace("\r\n", "").Replace(" ","");
+
             ProjectEntity projectEntityExpected = new ProjectEntity();
-            projectEntityExpected.Id = 3785177;
-            projectEntityExpected.Content = "New Content";
-            projectEntityExpected.ItemsCount = 0;
-            projectEntityExpected.Icon = 0;
-            projectEntityExpected.ItemType = 2;
-            Assert.AreEqual(projectEntityExpected.Id, (int)actualJson.Id);
-            Assert.AreEqual(projectEntityExpected.Content, (string)actualJson.Content);
-            Assert.AreEqual(projectEntityExpected.ItemsCount, (int)actualJson.ItemsCount);
-            Assert.AreEqual(projectEntityExpected.Icon, (int)actualJson.Icon);
-            Assert.AreEqual(projectEntityExpected.ItemType, (int)actualJson.ItemType);
+            projectEntityExpected.Id = 0;
+            projectEntityExpected.Content = "Inbox";
+            projectEntityExpected.ItemsCount = 22;
+            projectEntityExpected.Icon = 15;
+            projectEntityExpected.ItemType = 4;
+            projectEntityExpected.Children = new Object[0];
+
+            string expected = projectEntityExpected.GetObjectAsJson();
+            Assert.AreEqual(actual, expected);
+         
         }
+        
+        
     }
 }

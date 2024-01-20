@@ -12,7 +12,7 @@ namespace RestApi.Client
 {
     public class RestApiClient
     {
-        private string _uriBase = ConfigurationManager.AppSettings["url"];
+        private string _uriBase = ConfigurationManager.AppSettings["url"]+"/api";
         private static RestApiClient _instance = null;
 
         private RestApiClient()
@@ -38,7 +38,10 @@ namespace RestApi.Client
             var client = new RestClient();
             client.BaseUrl= new Uri(_uriBase);
 
-            var request = new RestRequest(_uriBase + uri, Method.GET);
+            var request = new RestRequest(uri, Method.GET);
+            request.OnBeforeDeserialization = resp => { resp.ContentType = "application/json"; };
+            request.RequestFormat = DataFormat.Json;
+           
             request.AddHeader("Authorization", RestHeader.GetPassword());
             var response = client.Execute(request);
             return response;
